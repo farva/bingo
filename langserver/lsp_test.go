@@ -101,6 +101,11 @@ package main;  func B() { p.A(); B() }`,
 			"xtest/y_test.go": `package p_test; func Y() int { return X }`,
 
 			"renaming/a.go": `package p
+/*
+#define _GNU_SOURCE
+#include <stdio.h>
+*/
+import "C"
 import "fmt"
 
 func main() {
